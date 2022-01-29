@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Место</title>
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body class="page">
+    <header class="header page__header">
+      <img src="./images/logo.svg" alt="Логотип" class="logo page__logo" />
+    </header>
+    <main class="content">
+      <section class="profile content__profile">
+        <img
+          src="./images/avatar.jpg"
+          alt="Фото профиля"
+          class="profile__avatar"
+        />
+        <h1 class="profile__user-name">Жак-Ив Кусто</h1>
+        <p class="profile__user-jop">Исследователь океана</p>
+        <button type="button" class="profile-edit profile__edit-profile">
+          <img
+            src="./images/icon-edit.svg"
+            alt="Редактировать профиль"
+            class="profile-edit__icon"
+          />
+        </button>
+        <button type="button" class="add-button profile__add-button">
+          <img
+            src="./images/icon-add.svg"
+            alt="Добавить"
+            class="add-button__icon"
+          />
+        </button>
+      </section>
+
+      <section class="elements content__elements">
+        <article class="element">
+          <img
+            src="./images/bdcry-1288404-unsplash.jpg"
+            alt="Фото Какой-то Храм"
+            class="element__photo"
+          />
+          <div class="element__text">
+            <h2 class="element__title">Карачаевск</h2>
+            <button type="button" class="element__heart"></button>
+          </div>
+        </article>
+
+        <article class="element">
+          <img
+            src="./images/bdcry-1556381-unsplash.jpg"
+            alt="Фото Гора"
+            class="element__photo"
+          />
+          <div class="element__text">
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <button type="button" class="element__heart"></button>
+          </div>
+        </article>
+
+        <article class="element">
+          <img
+            src="./images/bdcry-1431433-unsplash.jpg"
+            alt="Фото Поле"
+            class="element__photo"
+          />
+          <div class="element__text">
+            <h2 class="element__title">Домбай</h2>
+            <button type="button" class="element__heart"></button>
+          </div>
+        </article>
+
+        <article class="element">
+          <img
+            src="./images/bdcry-1556381-unsplash.jpg"
+            alt="Фото Гора"
+            class="element__photo"
+          />
+          <div class="element__text">
+            <h2 class="element__title">Гора Эльбрус</h2>
+            <button type="button" class="element__heart"></button>
+          </div>
+        </article>
+
+        <article class="element">
+          <img
+            src="./images/bdcry-1431433-unsplash.jpg"
+            alt="Фото Поле"
+            class="element__photo"
+          />
+          <div class="element__text">
+            <h2 class="element__title">Домбай</h2>
+            <button type="button" class="element__heart"></button>
+          </div>
+        </article>
+
+        <article class="element">
+          <img
+            src="./images/bdcry-1288404-unsplash.jpg"
+            alt="Фото Какой-то Храм"
+            class="element__photo"
+          />
+          <div class="element__text">
+            <h2 class="element__title">Карачаево-Черкессия</h2>
+            <button type="button" class="element__heart"></button>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer class="footer page__footer">
+      <p class="footer__copyright">&#169; 2022 Mesto Russia</p>
+    </footer>
+
+    <div class="popup">
+      <div class="popup__window">
+        <button type="button" class="popup__close-button"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form name="popupForm" class="popup__form">
+          <input
+            type="text"
+            name="user-name"
+            class="popup__input popup__input_name"
+          />
+          <input
+            type="text"
+            name="user-jop"
+            class="popup__input popup__input_jop"
+          />
+          <button type="submit" class="popup__save-button">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <script src="./jscripts/index.js"></script>
+  </body>
+</html>
