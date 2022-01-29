@@ -3,7 +3,7 @@
   max-width: 880px;
   grid-template-areas:
   "profile__avatar profile__user-name profile-edit add-button"
-  "profile__avatar profile__user-jop profile-edit add-button";
+  "profile__avatar profile__user-job profile-edit add-button";
   grid-template-columns: 150px 312px 1fr 150px;
   grid-template-rows: 72px 1fr;
 }
@@ -12,7 +12,7 @@
   .profile {
     grid-template-areas:
     "profile__avatar profile__user-name profile-edit"
-    "profile__avatar profile__user-jop profile-edit"
+    "profile__avatar profile__user-job profile-edit"
     "add-button add-button add-button";
     grid-template-columns: 150px 312px 1fr;
     grid-template-rows: 75px 30px 70px;
@@ -25,7 +25,7 @@
     grid-template-areas:
     "profile__avatar profile__avatar profile__avatar"
     "null profile__user-name profile-edit"
-    "profile__user-jop profile__user-jop profile__user-jop"
+    "profile__user-job profile__user-job profile__user-job"
     "add-button add-button add-button";
     grid-template-columns: 1fr 189px 1fr;
     grid-template-rows: 140px 1fr 1fr 63px;

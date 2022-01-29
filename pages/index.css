@@ -14,7 +14,7 @@
 @import url(../blocks/content/__profile/content__profile.css);
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__user-name/profile__user-name.css);
-@import url(../blocks/profile/__user-jop/profile__user-jop.css);
+@import url(../blocks/profile/__user-job/profile__user-job.css);
 
 @import url(../blocks/profile-edit/profile-edit.css);
 @import url(../blocks/profile-edit/__icon/profile-edit__icon.css);
@@ -47,4 +47,4 @@
 
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__input/_name/popup__input_name.css);
-@import url(../blocks/popup/__input/_jop/popup__input_jop.css);
+@import url(../blocks/popup/__input/_job/popup__input_job.css);
