@@ -1,9 +1,9 @@
-.add-button__icon {
+.profile__icon-addbutton {
   margin: auto;
 }
 
 @media (max-width: 740px) {
-  .add-button__icon {
+  .profile__icon-addbutton {
     width: 16px;
     height: 16px;
   }
