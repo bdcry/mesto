@@ -22,11 +22,8 @@
   }
 }
 
-
-
 @media (max-width: 680px) {
   .profile__add-button {
     margin: 13px auto 0;
   }
 }
-
