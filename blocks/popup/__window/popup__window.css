@@ -12,9 +12,14 @@
   padding: 34px 36px 37px 36px;
 }
 
-@media (max-width: 580px) {
+@media (max-width: 470px)  {
   .popup__window {
     margin: 0 19px;
+  }
+}
+
+@media (max-width: 420px)  {
+  .popup__window {
     padding: 25px 22px;
   }
 }

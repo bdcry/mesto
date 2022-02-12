@@ -31,7 +31,7 @@
   transform: rotate(-45deg);
 }
 
-@media (max-width: 580px) {
+@media (max-width: 540px) {
   .popup__close-button {
     right: -9px;
     top: -37px;
