@@ -13,6 +13,12 @@
   }
 }
 
+@media (max-width: 740px) {
+  .elements {
+    grid-column-gap: 17px;
+  }
+}
+
 @media (max-width: 680px) {
   .elements {
     grid-template-columns: repeat(1, 1fr);
