@@ -14,6 +14,8 @@ const inputCardUrl = popupTypeCard.querySelector('.popup__input_card_url'); //п
 const closeButtonCard = popupTypeCard.querySelector('.popup__close-button'); //переменная закрыть popup редактирования "Места"
 const addCardForm = popupTypeCard.querySelector('.popup__form'); //форма popup'а в редактировании профиля
 
+const imgName = document.querySelector('.popup__image-name');
+const imgUrl = document.querySelector('.popup__image-url');
 const elements = document.querySelector('.elements');
 const template = document.querySelector('.template'); //переменная блока карточки
 const initialCards = [
@@ -76,9 +78,9 @@ const createCard = (item) => {
 
   function openPhoto(photo) {
     openPopup(popupImage);
-    photo.querySelector('.popup__image-url').src = item.link;
-    photo.querySelector('.popup__image-url').alt = item.name;
-    photo.querySelector('.popup__image-name').textContent = item.name;
+    imgUrl.src = item.link;
+    imgUrl.alt = item.name;
+    imgName.textContent = item.name;
   }
 
   newCard
