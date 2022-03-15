@@ -45,14 +45,11 @@ const hideInputError = (formElement, inputElement, config) => {
       });
   });
     };
- 
+
     const enableValidation = (config) => {
       const { formSelector, ...props } = config;
       const formList = Array.from(document.querySelectorAll(formSelector));
       formList.forEach((formElement) => {
-          formElement.addEventListener('submit', (evt) => {
-              evt.preventDefault();
-          });
           setEventListeners(formElement, props);
       })
   };
