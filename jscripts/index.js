@@ -61,6 +61,15 @@ const initialCards = [
   },
 ];
 
+enableValidation({
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__save-button',
+  inactiveButtonClass: 'popup__save-button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible',
+});
+
 const createCard = (item) => {
   const newCard = template.content.querySelector('.element').cloneNode(true);
   newCard.querySelector('.element__title').textContent = item.name;
@@ -99,11 +108,29 @@ const result = initialCards.map((item) => {
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', pressEscape);
+  document.addEventListener('mousedown', clickOverlay);
 }
   
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', pressEscape);
+  document.removeEventListener('mousedown', clickOverlay);
 }
+
+function pressEscape (evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup);
+  };
+};
+
+function clickOverlay (evt) {
+  const openedPopup = document.querySelector('.popup_opened');
+  if (evt.target === openedPopup) {
+    closePopup(openedPopup);
+  };
+};
 
 function openPopupProfile() {
   openPopup(popupTypeEdit);
