@@ -84,7 +84,7 @@ function createCard(item) {
   return card.generateCard();
 };
 
-// Создания карточки через класс 
+// создания карточки через класс 
 const newCard = (cardInfo) => {
   const card = new Card(cardInfo, template, handleCardClick);
   const cardItem = card.creatCard();
@@ -125,7 +125,7 @@ function openPopupProfile() {
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  userName.textContent = nameInput.value; // Получите значение полей из свойства value
+  userName.textContent = nameInput.value;
   userjob.textContent = jobInput.value;
   closePopup(popupTypeEdit);
 };
@@ -158,7 +158,7 @@ initialCards.forEach((item) => {
   prependCard(card);
 });
 
-// Включение валидации
+// включение валидации
 const enableValidation = (config) => {
   const formList = Array.from(document.querySelectorAll(config.formSelector))
   formList.forEach((formElement) => {
@@ -170,10 +170,10 @@ const enableValidation = (config) => {
 
 enableValidation(config);
 
-addButton.addEventListener('click', () => openPopup(popupTypeCard)); // открывает popup добавления места
+addButton.addEventListener('click', () => openPopup(popupTypeCard));
 editProfile.addEventListener('click', openPopupProfile);
 closeProfileButton.addEventListener('click', () => closePopup(popupTypeEdit));
 closeButtonImage.addEventListener('click', () => closePopup(popupImage));
-closeButtonCard.addEventListener('click', () => closePopup(popupTypeCard)); // закрывает popup длбавления места
+closeButtonCard.addEventListener('click', () => closePopup(popupTypeCard));
 profileForm.addEventListener('submit', handleProfileFormSubmit);
 addCardForm.addEventListener('submit', handleCardFormSubmit);
