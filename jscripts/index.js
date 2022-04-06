@@ -84,7 +84,7 @@ function createCard(item) {
   return card.generateCard();
 };
 
-// создания карточки через класс 
+// создание карточки через класс 
 const newCard = (cardInfo) => {
   const card = new Card(cardInfo, template, handleCardClick);
   const cardItem = card.creatCard();
