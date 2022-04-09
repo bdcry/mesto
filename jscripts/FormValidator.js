@@ -48,7 +48,7 @@ export class FormValidator {
     
   resetValidation() {
     this._inputList.forEach((inputElement) => {
-      this._hideInputError(inputElement) // вызывает метод "спраять" для каждого input элемента 
+      this._hideInputError(inputElement)
     })
     this._toggleButtonState()
   }
