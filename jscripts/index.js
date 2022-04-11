@@ -1,9 +1,7 @@
 import { Card } from "./Card.js";
 import { FormValidator } from "./FormValidator.js";
 
-const buttonOpenEditProfilePopup = document.querySelector(
-  ".profile__edit-button"
-); //переменная открытия редактирования профиля
+const buttonOpenEditProfilePopup = document.querySelector(".profile__edit-button"); //переменная открытия редактирования профиля
 const userName = document.querySelector(".profile__user-name"); //переменная имени профиля на странице
 const userjob = document.querySelector(".profile__user-job"); //переменная работы на странице
 const popupTypeEdit = document.querySelector(".popup_type_edit"); //переменная редактирования профиля
