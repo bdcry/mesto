@@ -23,7 +23,7 @@ const buttonCardsSave = cardFormAdd.querySelector(".popup__save-button");
 const imgName = document.querySelector(".popup__image-name");
 const imgUrl = document.querySelector(".popup__image-url");
 const elements = document.querySelector(".elements");
-const template = document.querySelector(".template").content; //переменная блока карточки
+const cardTemplateSelector = (".template");
 
 const initialCards = [
   {
@@ -81,7 +81,7 @@ function createNewCard(e) {
   e.preventDefault();
   const card = new Card(
     { name: cardNameInput.value, link: cardUrlInput.value },
-    template,
+    cardTemplateSelector,
     handleCardClick
   );
   elements.append(card.createCard());
@@ -90,7 +90,7 @@ function createNewCard(e) {
 
 function displayCards(cards) {
   cards.forEach((item) => {
-    const card = new Card(item, template, handleCardClick);
+    const card = new Card(item, cardTemplateSelector, handleCardClick);
     elements.append(card.createCard());
   });
 }
