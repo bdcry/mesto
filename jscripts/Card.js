@@ -7,7 +7,12 @@ export class Card {
   }
 
   _getElement() {
-    const template = document.querySelector(this._cardTemplateSelector).content.querySelector('.element').cloneNode(true); 
+    const template = document
+    .querySelector(this._cardTemplateSelector)
+    .content
+    .querySelector('.element')
+    .cloneNode(true); 
+
     return template;
   }
 
@@ -15,7 +20,7 @@ export class Card {
     this._templateView.remove();
   }
 
-  _getIsLike() {
+  _toggleLike() {
     this._cardLiked.classList.toggle("element__heart-active");
   }
 
@@ -24,7 +29,7 @@ export class Card {
     this._cardLiked = this._templateView.querySelector(".element__heart");
 
     this._cardRemove.addEventListener("click", () => this._removeItem());
-    this._cardLiked.addEventListener("click", () => this._getIsLike());
+    this._cardLiked.addEventListener("click", () => this._toggleLike());
 
     this._cardImg.addEventListener("click", () =>
       this._handleCardClick(this._name, this._link)
