@@ -17,9 +17,9 @@
 Использованы технологий Flex и Grid выравнивания. 
 Файловая структуора по БЭМ.
 Адаптивная вёрстка.
-Скрипт на JS.
+Скрипт на JS c ООП.
 
 
 **Ссылка на GitHub Pages**
 
-* [Ссылка на GitHub Pages](https://bdcry.github.io/mesto/)
+* [Ссылка на GitHub Pages](https://bdcry.github.io/mesto/src/)

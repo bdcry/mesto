@@ -4,31 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Место</title>
-    <link rel="stylesheet" href="./pages/index.css" />
+    <!-- <link rel="stylesheet" href="./pages/index.css" /> -->
   </head>
   <body class="page">
     <header class="header page__header">
-      <img src="./images/logo.svg" alt="Логотип" class="logo page__logo" />
+      <!-- <img src="./images/logo.svg" alt="Логотип" class="logo page__logo" /> -->
+      <img
+        src="<%=require('./images/logo.svg')%>"
+        alt="Логотип"
+        class="logo page__logo"
+      />
     </header>
     <main class="content">
       <section class="profile content__profile">
-        <img
+        <!-- <img
           src="./images/avatar.jpg"
+          alt="Фото профиля"
+          class="profile__avatar"
+        /> -->
+        <img
+          src="<%=require('./images/avatar.jpg')%>"
           alt="Фото профиля"
           class="profile__avatar"
         />
         <h1 class="profile__user-name">Жак-Ив Кусто</h1>
         <p class="profile__user-job">Исследователь океана</p>
         <button type="button" class="profile__edit-button">
-          <img
+          <!-- <img
             src="./images/icon-edit.svg"
+            alt="Редактировать профиль"
+            class="profile__icon-button"
+          /> -->
+          <img
+            src="<%=require('./images/icon-edit.svg')%>"
             alt="Редактировать профиль"
             class="profile__icon-button"
           />
         </button>
         <button type="button" class="profile__add-button">
-          <img
+          <!-- <img
             src="./images/icon-add.svg"
+            alt="Добавить"
+            class="profile__icon-addbutton"
+          /> -->
+          <img
+            src="<%=require('./images/icon-add.svg')%>"
             alt="Добавить"
             class="profile__icon-addbutton"
           />
@@ -121,6 +141,6 @@
         </div>
       </article>
     </template>
-    <script type="module" src="./jscripts/index.js"></script>
+    <!-- <script type="module" src="./pages/index.js"></script> -->
   </body>
 </html>
