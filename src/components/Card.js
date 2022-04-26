@@ -17,6 +17,7 @@ export class Card {
 
   _removeItem() {
     this._templateView.remove();
+    this._templateView = null;
   }
 
   _toggleLike() {

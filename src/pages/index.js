@@ -42,6 +42,7 @@ const userData = new UserInfo({
   info: ".profile__user-job",
 });
 
+
 function cardCreate(item) {
   const cardItem = new Card(item, cardTemplateSelector, handleCardClick);
   const cardElenent = cardItem.createCard();
@@ -60,28 +61,20 @@ const cardSection = new Section(
 );
 
 // константы под классов popup'а
-const popupCardImg = new PopupWithImage(
-  { selectorPopup: popupImage },
-  imgUrl,
-  imgName
-);
-const popupCardAdd = new PopupWithForm({
-  selectorPopup: popupTypeCard,
-  functionPopupForm: () => {
-    const card = new Card(
-      { name: cardNameInput.value, link: cardUrlInput.value },
-      cardTemplateSelector,
-      handleCardClick
-    );
-    elements.append(card.createCard());
-  },
-});
-const popupProfileEdit = new PopupWithForm({
-  selectorPopup: popupTypeEdit,
-  functionPopupForm: () => {
-    userData.setUserInfo({ name: nameInput.value, info: jobInput.value });
-  },
-});
+const popupCardImg = new PopupWithImage({ selectorPopup: '.popup_type_image' }, imgUrl, imgName); 
+
+const popupCardAdd = new PopupWithForm({  
+  selectorPopup: '.popup_type_card', 
+  functionPopupForm: (data) => { 
+    cardSection.addItem(cardCreate({ name: data['card-name'], link: data['card-url'] }))
+  } 
+}) 
+
+const popupProfileEdit = new PopupWithForm({  
+  selectorPopup: '.popup_type_edit',  
+  functionPopupForm: (data) => { 
+    userData.setUserInfo({ name: data['user-name'], info: data['user-job'] })
+  }})
 
 // открывает popup создание новой карточки
 function openPopupCard() {
