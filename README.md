@@ -23,3 +23,4 @@
 **Ссылка на GitHub Pages**
 
 * [Ссылка на GitHub Pages](https://bdcry.github.io/mesto/src/)
+* [Ссылка на GitHub Pages](https://bdcry.github.io/mesto/)
