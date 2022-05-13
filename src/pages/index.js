@@ -171,7 +171,6 @@ function openPopupCard() {
 }
 
 function openPopupAvatar() {
-  popupAvatarEdit.renderLoading(false);
   popupAvatarEdit.open();
   inputAvatarUrl.value = "";
   formValidAvatar.resetValidation();
@@ -197,6 +196,7 @@ function handleAvatarFormSubmit(link) {
       userData.setUserAvatar(res.avatar);
       popupAvatarEdit.close();
     })
+    .finally( _ => popupAvatarEdit.renderLoading(false))
     .catch((err) => console.log(err, err.status));
 }
 
@@ -210,12 +210,12 @@ function handleProfileFormSubmit(data) {
       userData.setUserInfo(user.name, user.about);
       popupProfileEdit.close();
     })
+    .finally( _ => popupProfileEdit.renderLoading(false))
     .catch((err) => console.log(err));
 }
 
 // Профиль
 function openPopupProfile() {
-  popupProfileEdit.renderLoading(false);
   popupProfileEdit.open();
   const newUserData = userData.getUserInfo();
   nameInput.value = newUserData.name;
