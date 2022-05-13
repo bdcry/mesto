@@ -8,7 +8,7 @@
   </head>
   <body class="page">
     <header class="header page__header">
-      <!-- <img src="./images/logo.svg" alt="Логотип" class="logo page__logo" /> -->
+      <!--  <img src="./images/logo.svg" alt="Логотип" class="logo page__logo" /> -->
       <img
         src="<%=require('./images/logo.svg')%>"
         alt="Логотип"
@@ -22,13 +22,19 @@
           alt="Фото профиля"
           class="profile__avatar"
         /> -->
-        <img
-          src="<%=require('./images/avatar.jpg')%>"
-          alt="Фото профиля"
-          class="profile__avatar"
-        />
-        <h1 class="profile__user-name">Жак-Ив Кусто</h1>
-        <p class="profile__user-job">Исследователь океана</p>
+        <div class="profile__avatar-img">
+          <img
+            src="<%=require('./images/avatar.jpg')%>"
+            alt="Фото профиля"
+            class="profile__avatar"
+          />
+          <button
+            title="Загрузить аватар"
+            class="profile__avatar-button"
+          ></button>
+        </div>
+        <h1 class="profile__user-name"></h1>
+        <p class="profile__user-job"></p>
         <button type="button" class="profile__edit-button">
           <!-- <img
             src="./images/icon-edit.svg"
@@ -69,7 +75,7 @@
           <input
             id="name"
             type="text"
-            name="user-name"
+            name="name"
             placeholder="Имя"
             class="popup__input popup__input_string_name"
             minlength="2"
@@ -80,7 +86,7 @@
           <input
             id="profession"
             type="text"
-            name="user-job"
+            name="about"
             placeholder="Работа"
             class="popup__input popup__input_string_job"
             minlength="2"
@@ -93,6 +99,25 @@
       </div>
     </div>
 
+    <div class="popup popup_type_edit-avatar">
+      <div class="popup__window">
+        <button type="button" class="popup__close-button"></button>
+        <h3 class="popup__title">Обновить аватар</h3>
+        <form name="edit-form" class="popup__form" novalidate>
+          <input
+            id="avatar"
+            type="url"
+            name="link"
+            placeholder="Ссылка на картинку"
+            class="popup__input popup__input_avatar_url"
+            required
+          />
+          <span id="avatar-error" class="popup__error"></span>
+          <button type="submit" class="popup__save-button">Отправить</button>
+        </form>
+      </div>
+    </div>
+
     <div class="popup popup_type_card">
       <div class="popup__window">
         <button type="button" class="popup__close-button"></button>
@@ -101,7 +126,7 @@
           <input
             id="card-name"
             type="text"
-            name="card-name"
+            name="name"
             placeholder="Название места"
             class="popup__input popup__input_card_name"
             minlength="2"
@@ -112,13 +137,27 @@
           <input
             id="cardUrl"
             type="url"
-            name="card-url"
+            name="link"
             placeholder="Ссылка на картинку"
             class="popup__input popup__input_card_url"
             required
           />
           <span id="cardUrl-error" class="popup__error"></span>
           <button type="submit" class="popup__save-button">Создать</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_type_delete">
+      <div class="popup__window">
+        <button type="button" class="popup__close-button"></button>
+        <h3 class="popup__title">Вы уверены?</h3>
+        <form
+          name="edit-form"
+          class="popup__form popup__form_delete"
+          novalidate
+        >
+          <button type="submit" class="popup__save-button">Да</button>
         </form>
       </div>
     </div>
@@ -137,7 +176,10 @@
         <img src="." alt="нет картинки" class="element__photo" />
         <div class="element__text">
           <h2 class="element__title">Карачаевск</h2>
-          <button type="button" class="element__heart"></button>
+          <div>
+            <button type="button" class="element__heart"></button><br />
+            <span class="element__heart-count"></span>
+          </div>
         </div>
       </article>
     </template>

@@ -7,12 +7,18 @@ export class Section {
   }
 
   setItems() {
-    this._items.forEach((item) => {
-      this._renderer(item);
+    this._items.then((cards) => {
+      cards.forEach((card) => {
+        this._renderer(card);
+      });
     });
   }
 
-  addItem(element) {
+  addItemServer(element) {
+    this._container.append(element);
+  }
+
+  addItemUser(element) {
     this._container.prepend(element);
   }
 }
