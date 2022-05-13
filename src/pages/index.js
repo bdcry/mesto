@@ -2,6 +2,7 @@ import { Api } from "../components/Api.js";
 import { Card } from "../components/Card.js";
 import { FormValidator } from "../components/FormValidator.js";
 import { Section } from "../components/Section.js";
+import { PopupWithConfirm } from "../components/PopupWithConfirm.js";
 import { PopupWithImage } from "../components/PopupWithImage.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
 import { UserInfo } from "../components/UserInfo.js";
@@ -105,15 +106,15 @@ const popupProfileEdit = new PopupWithForm({
   },
 });
 
-const popupDeletion = new PopupWithForm({
-  selectorPopup: ".popup_type_delete",
-});
-
 const popupAvatarEdit = new PopupWithForm({
   selectorPopup: ".popup_type_edit-avatar",
   functionPopupForm: (avatar) => {
     handleAvatarFormSubmit(avatar);
   },
+});
+
+const popupDeletion = new PopupWithConfirm({
+  selectorPopup: ".popup_type_delete",
 });
 
 // открывает popup карточки
@@ -127,16 +128,16 @@ function cardCreate(item) {
     item,
     cardTemplateSelector,
     handleCardClick,
-    (id) => {
-      popupDeletion.open();
-      popupDeletion.changeSubmitHandler(() => {
-        api
-          .deleteCard(id)
-          .then(() => {
-            cardItem.deleteCard();
-            popupDeletion.close();
+    (id) => { 
+      popupDeletion.open(); 
+      popupDeletion.changeSubmitHandler(() => { 
+        api 
+          .deleteCard(id) 
+          .then(() => { 
+            cardItem.deleteCard(); 
+            popupDeletion.close(); 
           })
-          .catch((err) => console.log(err));
+          .catch((err) => console.log(err)); 
       });
     },
     (id) => {
@@ -161,11 +162,10 @@ function cardCreate(item) {
   return cardItem;
 }
 
+
 // открывает popup создание новой карточки
 function openPopupCard() {
-  popupCardAdd.renderLoading(false);
   popupCardAdd.open();
-  cardNameInput.value = "";
   cardUrlInput.value = "";
   formValidCard.resetValidation();
 }
@@ -183,7 +183,9 @@ function handleCardFormSubmit(item) {
     const card = cardCreate(data).createCard();
     cardSection.addItemUser(card);
     popupCardAdd.close();
-  });
+  })
+  .finally( _ => popupCardAdd.renderLoading(false))
+  .catch((err) => console.log(err, err.status))
 }
 
 // обрабатыватываем отправку формы замены аватара

@@ -1,10 +1,3 @@
-const onError = (res) => {
-  if (res.ok) {
-    return res.json();
-  }
-  return Promise.reject("Произошла ошибка");
-};
-
 export class Api {
   constructor({ url, headers }) {
     // передаем url API и заголовок
@@ -20,7 +13,7 @@ export class Api {
     // загружаем имя пользователя
     return fetch(`${this._url}users/me`, {
       headers: this._headers,
-    }).then(onError);
+    }).then((res) => this._checkResponse(res));
   }
 
   setUserInfo(name, about) {
@@ -32,13 +25,13 @@ export class Api {
         name,
         about,
       }),
-    }).then(onError);
+    }).then((res) => this._checkResponse(res));
   }
 
   getInitialCards() {
     return fetch(`${this._url}cards`, {
       headers: this._headers,
-    }).then(onError);
+    }).then((res) => this._checkResponse(res));
   }
 
   createCard(card) {
@@ -50,7 +43,7 @@ export class Api {
         name: card.name,
         link: card.link,
       }),
-    }).then(onError);
+    }).then((res) => this._checkResponse(res));
   }
 
   deleteCard(id) {
@@ -58,7 +51,7 @@ export class Api {
     return fetch(`${this._url}cards/${id}`, {
       method: "DELETE",
       headers: this._headers,
-    }).then(onError);
+    }).then((res) => this._checkResponse(res));
   }
 
   deleteLike(id) {
@@ -66,7 +59,7 @@ export class Api {
     return fetch(`${this._url}cards/${id}/likes`, {
       method: "DELETE",
       headers: this._headers,
-    }).then(onError);
+    }).then((res) => this._checkResponse(res));
   }
 
   addLike(id) {
@@ -74,7 +67,7 @@ export class Api {
     return fetch(`${this._url}cards/${id}/likes`, {
       method: "PUT",
       headers: this._headers,
-    }).then(onError);
+    }).then((res) => this._checkResponse(res));
   }
 
   setUserAvatar(avatar) {
@@ -85,6 +78,13 @@ export class Api {
       body: JSON.stringify({
         avatar,
       }),
-    }).then(onError);
+    }).then((res) => this._checkResponse(res));
   }
+
+  _checkResponse(res){
+    if (res.ok) {
+      return res.json();
+    }
+    return Promise.reject(`Произошла ошибка: ${res.status}`);
+  };
 }

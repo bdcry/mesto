@@ -43,9 +43,7 @@ export class Card {
   setLikes(countLikes) {
     this._cardLiked = this._templateView.querySelector(".element__heart");
     this._elementCardCountLikes = countLikes;
-    this._countLikes = this._templateView.querySelector(
-      ".element__heart-count"
-    );
+    this._countLikes = this._templateView.querySelector(".element__heart-count");
     this._countLikes.textContent = this._elementCardCountLikes.length;
 
     this._cardLikedActive = "element__heart-active";

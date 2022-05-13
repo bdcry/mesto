@@ -17,9 +17,7 @@ export const buttonCardClose = popupTypeCard.querySelector(".popup__close-button
 export const cardFormAdd = popupTypeCard.querySelector(".popup__form"); //форма popup'а в редактировании профиля
 
 export const popupImage = document.querySelector(".popup_type_image");
-export const buttonImageClose = popupImage.querySelector(
-  ".popup__close-button"
-);
+export const buttonImageClose = popupImage.querySelector(".popup__close-button");
 export const buttonCardsSave = cardFormAdd.querySelector(".popup__save-button");
 export const imgName = document.querySelector(".popup__image-name");
 export const imgUrl = document.querySelector(".popup__image-url");
@@ -29,13 +27,10 @@ export const deleteCard = popupTypeCard.querySelector(".element__delete");
 
 // Для popup'a смены аватара
 export const avatarButton = document.querySelector(".profile__avatar-button");
-export const popupAvavtarEdit = document.querySelector(
-  ".popup_type_edit-avatar"
-);
+export const popupAvavtarEdit = document.querySelector(".popup_type_edit-avatar");
 export const avatarForm = popupAvavtarEdit.querySelector(".popup__form");
-export const inputAvatarUrl = popupAvavtarEdit.querySelector(
-  ".popup__input_avatar_url"
-);
+export const inputAvatarUrl = popupAvavtarEdit.querySelector(".popup__input_avatar_url");
+
 
 export const initialCards = [
   {
