@@ -36,7 +36,6 @@ export class Api {
   }
 
   getInitialCards() {
-    // получить карточки метод GET
     return fetch(`${this._url}cards`, {
       headers: this._headers,
     }).then(onError);
